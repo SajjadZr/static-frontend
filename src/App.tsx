@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import './index.css'; // We'll use this for styling
 import Quote from './component/Quote';
 import Weather from './component/weather';
+import SettingsPanel from './component/SettingsPanel';
 import Greeting from './component/Greeting';
 
 
@@ -74,6 +75,10 @@ function App() {
       <div className='greeting'>
         <Greeting />
       </div>
+      <div className='panel'>
+        <SettingsPanel />
+      </div>
+      
     </div>
   );
 }

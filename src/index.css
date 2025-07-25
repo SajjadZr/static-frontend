@@ -88,3 +88,10 @@ h2 {
   padding: 20px 30px;
   border-radius: 12px;
 }
+.panel {
+  position: fixed;
+  right: 20px;
+  top: 30px;
+  background-color: #2d4270;
+  border-radius: 12px;
+}
