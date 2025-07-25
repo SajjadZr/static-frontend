@@ -12,13 +12,17 @@ import { useState, useEffect } from 'react';
 import './index.css'; // We'll use this for styling
 import Quote from './component/Quote';
 import Weather from './component/weather';
+import Greeting from './component/Greeting';
+
 
 function App() {
   // Set up state to hold the current date and time
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   // Use an effect to set up a timer that updates the time every second
+
   useEffect(() => {
+      
     const timerId = setInterval(() => {
       setCurrentDateTime(new Date());
     }, 1000);
@@ -27,6 +31,7 @@ function App() {
     return () => {
       clearInterval(timerId);
     };
+
   }, []); // The empty array [] means this effect runs only once on mount
 
   // Format the date and time for display
@@ -63,9 +68,12 @@ function App() {
       <div className='weather'>
         <Weather />
       </div>
-      
-      <Quote />
-      
+      <div className='quote'>
+        <Quote />
+      </div>
+      <div className='greeting'>
+        <Greeting />
+      </div>
     </div>
   );
 }
