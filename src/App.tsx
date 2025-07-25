@@ -10,6 +10,7 @@
 
 import { useState, useEffect } from 'react';
 import './index.css'; // We'll use this for styling
+import Quote from './component/Quote';
 
 function App() {
   // Set up state to hold the current date and time
@@ -42,14 +43,23 @@ function App() {
     hour12: true,
   });
 
+  const hour = new Date().getHours();
+  let bgGradient = '';
+
+  if (hour < 12) bgGradient = 'linear-gradient(#e0f7fa, #b2ebf2)';
+  else if (hour < 18) bgGradient = 'linear-gradient(#fff9c4, #ffe082)';
+  else bgGradient = 'linear-gradient(#263238, #000)';
+
+
   return (
-    <div className="container">
+    <div className="container" style={{ background: bgGradient, minHeight: '100vh', transition: 'all 0.5s ease' }}>
       <div className="datetime-card">
         <h1>Today's Date</h1>
         <p className="date">{formattedDate}</p>
         <h2>Current Time</h2>
         <p className="time">{formattedTime}</p>
       </div>
+      <Quote />
     </div>
   );
 }
