@@ -11,6 +11,7 @@
 import { useState, useEffect } from 'react';
 import './index.css'; // We'll use this for styling
 import Quote from './component/Quote';
+import Weather from './component/weather';
 
 function App() {
   // Set up state to hold the current date and time
@@ -58,8 +59,13 @@ function App() {
         <p className="date">{formattedDate}</p>
         <h2>Current Time</h2>
         <p className="time">{formattedTime}</p>
+      </div> 
+      <div className='weather'>
+        <Weather />
       </div>
+      
       <Quote />
+      
     </div>
   );
 }
