@@ -95,3 +95,13 @@ h2 {
   background-color: #2d4270;
   border-radius: 12px;
 }
+
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+
+  div {
+    padding: 20px !important;
+  }
+}
